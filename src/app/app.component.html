@@ -7,7 +7,7 @@
       id="currency1"
       name="currency1"
       value="{{ currency1 }}"
-      [(ngModel)]="currency1"
+      [(ngModel)]="currencyInput1"
       (keyup)="calculateCurrencyTwo()"
     />
     <select #s1 name="select1" id="select1" (change)="changeBase(s1.value, 1)">
@@ -24,7 +24,7 @@
       id="currency2"
       name="currency2"
       value="{{ currency2 }}"
-      [(ngModel)]="currency2"
+      [(ngModel)]="currencyInput2"
       (keyup)="calculateCurrencyOne()"
     />
     <select #s2 name="select2" id="select2" (change)="changeBase(s2.value, 2)">
