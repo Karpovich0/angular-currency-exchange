@@ -6,8 +6,12 @@ import { CurrencyapiService } from './currencyapi.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  eur: string = '';
+  usd: string = '';
+  pln: string = '';
+
   base1: string = 'UAH';
-  base2: string = 'UAH';
+  base2: string = 'USD';
   basesCoefficient: number = 1;
   currencyInput1: string = '';
   currencyInput2: string = '';
@@ -25,7 +29,7 @@ export class AppComponent implements OnInit {
       case 2:
         this.base2 = base;
         this.calculateBaseCoeficient();
-        this.calculateCurrencyTwo();
+        this.calculateCurrencyOne();
         break;
       default:
         break;
@@ -81,10 +85,21 @@ export class AppComponent implements OnInit {
     this.currency.getCurrencyData().subscribe((data) => {
       this.ratesArray = JSON.parse(JSON.stringify(data));
       this.calculateBaseCoeficient();
+      this.getAllRates();
     });
+  }
+
+  getAllRates() {
+    if (this.ratesArray.length === 0) {
+      return;
+    }
+    this.eur = this.ratesArray.data.EUR.value.toFixed(4);
+    this.usd = this.ratesArray.data.USD.value.toFixed(4);
+    this.pln = this.ratesArray.data.PLN.value.toFixed(4);
   }
   constructor(private currency: CurrencyapiService) {}
   ngOnInit(): void {
     this.getRates();
+    this.getAllRates();
   }
 }

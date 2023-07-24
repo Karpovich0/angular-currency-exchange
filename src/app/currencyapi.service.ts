@@ -8,7 +8,7 @@ export class CurrencyapiService {
 
   getCurrencyData() {
     let url =
-      'https://api.currencyapi.com/v3/latest?apikey=cur_live_OgMYPRnOKGNM4GlfFYvjIqiTLRsDoIgqSO6MQyPM&currencies=EUR%2CUSD%2CUAH%2CPLN&base_currency=UAH';
+      'https://api.currencyapi.com/v3/latest?apikey=cur_live_fXvJstm8BxlecIFUsdDy1i5ulsfsuet03Au3Aw20&currencies=EUR%2CUSD%2CUAH%2CPLN&base_currency=UAH';
     return this.http.get(url);
   }
 }

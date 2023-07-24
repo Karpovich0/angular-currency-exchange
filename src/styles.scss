@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    background-image: url("./assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: #23b499;
+        opacity: 0.65;
+    }
+}
+.inner {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 98vh;
+}
+header {
+    margin-top: 20px;
+    width: 100%;
+
+    h2 {
+        margin: 0;
+        span {
+            color: #b42323;
+            white-space: nowrap;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+        display: flex;
+        column-gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+        font-weight: 600;
+        font-size: 1.05em;
+        span {
+            color: #b42323;
+        }
+    }
+}
+.header-inner {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #2b2e2e;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

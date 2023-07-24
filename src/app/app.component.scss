@@ -1,0 +1,99 @@
+.content {
+    padding-bottom: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+.main {
+    padding: 40px 20px;
+    width: 100%;
+    border-radius: 20px;
+    color: #2b2e2e;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+h1 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    line-height: 1;
+    text-align: center;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+    input {
+        padding: 0.5em;
+        align-self: stretch;
+        border-radius: 0.5em;
+        font-size: 1.2em;
+        border-color: #2b2e2e;
+        @media (max-width: 450px) {
+            margin: 10px 0;
+            align-self: center;
+            max-width: 220px;
+            width: 100%;
+        }
+    }
+}
+select {
+    margin: 0 -1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "Open Sans", sans-serif;
+}
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 6em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+.select:hover::after {
+    color: #23b499;
+}
+
+label {
+    font-size: 1.25em;
+    font-weight: 500;
+}
