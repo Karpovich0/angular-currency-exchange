@@ -57,8 +57,10 @@ export class AppComponent implements OnInit {
     //result value validation
     if (res === 0) {
       this.currency1 = '';
+      this.currencyInput1 = '';
     } else {
       this.currency1 = res.toString();
+      this.currencyInput1 = res.toString();
     }
   }
   calculateCurrencyTwo() {
@@ -69,14 +71,17 @@ export class AppComponent implements OnInit {
     } else {
       this.currency1 = this.currencyInput1;
     }
+    console.log(this.currency1);
     //round result value
     let res = +this.currency1 * this.basesCoefficient;
     res = Math.round((res + Number.EPSILON) * 100) / 100;
     //result value validation
     if (res === 0) {
       this.currency2 = '';
+      this.currencyInput2 = '';
     } else {
       this.currency2 = res.toString();
+      this.currencyInput2 = res.toString();
     }
   }
 
