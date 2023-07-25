@@ -71,7 +71,6 @@ export class AppComponent implements OnInit {
     } else {
       this.currency1 = this.currencyInput1;
     }
-    console.log(this.currency1);
     //round result value
     let res = +this.currency1 * this.basesCoefficient;
     res = Math.round((res + Number.EPSILON) * 100) / 100;
