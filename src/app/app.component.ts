@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   usd: string = '';
   pln: string = '';
 
+  lastInput: number = 0;
+
   base1: string = 'UAH';
   base2: string = 'USD';
   basesCoefficient: number = 1;
@@ -24,12 +26,17 @@ export class AppComponent implements OnInit {
       case 1:
         this.base1 = base;
         this.calculateBaseCoeficient();
-        this.calculateCurrencyTwo();
+        this.lastInput === 1
+          ? this.calculateCurrencyTwo()
+          : this.calculateCurrencyOne();
+
         break;
       case 2:
         this.base2 = base;
         this.calculateBaseCoeficient();
-        this.calculateCurrencyOne();
+        this.lastInput === 2
+          ? this.calculateCurrencyOne()
+          : this.calculateCurrencyTwo();
         break;
       default:
         break;
@@ -50,6 +57,7 @@ export class AppComponent implements OnInit {
       return;
     } else {
       this.currency2 = this.currencyInput2;
+      this.lastInput = 2;
     }
     //round result value
     let res = +this.currency2 / this.basesCoefficient;
@@ -70,6 +78,7 @@ export class AppComponent implements OnInit {
       return;
     } else {
       this.currency1 = this.currencyInput1;
+      this.lastInput = 1;
     }
     //round result value
     let res = +this.currency1 * this.basesCoefficient;
